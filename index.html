@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserisci Punteggi - CRE/Grest</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            max-width: 500px;
+            width: 100%;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .team-input {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px solid #ddd;
+        }
+        .team-input label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        .team-input input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            text-align: center;
+        }
+        .fucsia { background-color: #ff00aa; }
+        .verdi { background-color: #00cc66; }
+        .blu { background-color: #007bff; }
+        .gialli { background-color: #ffcc00; color: #333; }
+        .rossi { background-color: #e53935; }
+        .arancioni { background-color: #ff6600; }
+        .btn-start {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .btn-start:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏆 Classifica Finale CRE/Grest</h1>
+        <form id="scoreForm">
+            <div class="team-input">
+                <label class="fucsia">Squadra Fucsia</label>
+                <input type="number" name="fucsia" placeholder="Inserisci punteggio" required>
+            </div>
+            <div class="team-input">
+                <label class="verdi">Squadra Verdi</label>
+                <input type="number" name="verdi" placeholder="Inserisci punteggio" required>
+            </div>
+            <div class="team-input">
+                <label class="blu">Squadra Blu</label>
+                <input type="number" name="blu" placeholder="Inserisci punteggio" required>
+            </div>
+            <div class="team-input">
+                <label class="gialli">Squadra Gialli</label>
+                <input type="number" name="gialli" placeholder="Inserisci punteggio" required>
+            </div>
+            <div class="team-input">
+                <label class="rossi">Squadra Rossi</label>
+                <input type="number" name="rossi" placeholder="Inserisci punteggio" required>
+            </div>
+            <div class="team-input">
+                <label class="arancioni">Squadra Arancioni</label>
+                <input type="number" name="arancioni" placeholder="Inserisci punteggio" required>
+            </div>
+            <button type="submit" class="btn-start">🎉 Inizia la Classifica!</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('scoreForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const scores = {
+                fucsia: parseInt(formData.get('fucsia')),
+                verdi: parseInt(formData.get('verdi')),
+                blu: parseInt(formData.get('blu')),
+                gialli: parseInt(formData.get('gialli')),
+                rossi: parseInt(formData.get('rossi')),
+                arancioni: parseInt(formData.get('arancioni'))
+            };
+            localStorage.setItem('teamScores', JSON.stringify(scores));
+            window.location.href = 'classifica.html';
+        });
+    </script>
+</body>
+</html>

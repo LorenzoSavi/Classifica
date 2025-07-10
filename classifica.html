@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classifica Finale - CRE/Grest</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="scene">
+        <h1 class="title">🏆 CLASSIFICA FINALE</h1>
+        
+        <div class="cards-container" id="cardsContainer">
+            <!-- Le carte verranno generate dinamicamente -->
+        </div>
+
+        <div class="podium-container" id="podiumContainer">
+            <div class="podium-step step-2">
+                <div class="step-number">2°</div>
+                <div class="step-label">SECONDO</div>
+            </div>
+            <div class="podium-step step-1">
+                <div class="step-number">1°</div>
+                <div class="step-label">PRIMO</div>
+            </div>
+            <div class="podium-step step-3">
+                <div class="step-number">3°</div>
+                <div class="step-label">TERZO</div>
+            </div>
+        </div>
+
+        <div class="lower-positions" id="lowerPositions">
+            <div class="position-4">4°</div>
+            <div class="position-5">5°</div>
+            <div class="position-6">6°</div>
+        </div>
+
+        <button id="revealBtn" class="reveal-btn">🎲 Rivela Prossima Posizione</button>
+        
+        <div class="controls">
+            <button onclick="location.href='index.html'" class="back-btn">← Torna Indietro</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
